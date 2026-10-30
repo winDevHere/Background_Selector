@@ -5,19 +5,20 @@ public class DropDownExample : MonoBehaviour
 {
     [SerializeField] TMP_Dropdown dropdown;
     
-
     void Start()
     {
-        dropdown.onValueChanged.AddListener(OnDropdownValueChanged);
+        // Listen for changes
+        dropdown.onValueChanged.AddListener(OnDropdownChanged);
     }
 
-    void OnDropdownValueChanged(int index)
+    void OnDropdownChanged(int index)
     {
-        Debug.Log("Value changed " + index);
+        string selectedText = dropdown.options[index].text;
+        Debug.Log($"Selected index {index}: {selectedText}");
     }
 
     private void OnDestroy()
     {
-        dropdown.onValueChanged.RemoveListener(OnDropdownValueChanged);
-    }
+        dropdown.onValueChanged.RemoveListener(OnDropdownChanged);
+    }    
 }
