@@ -771,6 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371545500}
   - component: {fileID: 371545501}
+  - component: {fileID: 371545502}
   m_Layer: 0
   m_Name: DD_Inspector
   m_TagString: Untagged
@@ -800,12 +801,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371545499}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 764003b2aceebdb4f976d377f79b2623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DropDownUsingInspector
   dropdown: {fileID: 1734655014}
+  noneRawImage: {fileID: 1655486545}
+  forestRawImage: {fileID: 1182474437}
+  beachRawImage: {fileID: 1851247307}
+--- !u!114 &371545502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371545499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a09481601894be47b5b2c8c975d462c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DropDownObjectSwitcher
+  objects:
+  - {fileID: 1655486545}
+  - {fileID: 1182474437}
+  - {fileID: 1851247307}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -2533,13 +2553,13 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 371545499}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 371545502}
+        m_TargetAssemblyTypeName: DropDownObjectSwitcher, Assembly-CSharp
+        m_MethodName: SetActiveObject
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
