@@ -7,6 +7,7 @@ public class ChangeTexture : MonoBehaviour
 {
     [SerializeField] RawImage myRawImage;
     [SerializeField] Texture[] textures;
+    [SerializeField] TMP_Dropdown dropdown;
 
     void Start()
     {
